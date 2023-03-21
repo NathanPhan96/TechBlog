@@ -8,8 +8,10 @@
 <form method="POST" action="api/post/delete/{{id}}">
     <button type="submit">DELETE</button>
 </form>
-
 </form>
 {{>posts this }}
+{{#each comments}}
+{{>comments this}}
+{{/each}}
 {{/each}}
 </div>

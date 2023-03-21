@@ -15,10 +15,11 @@ router.get("/", withAuth, async (req, res) => {
   });
   });
   
-  router.post("/", withAuth, (req, res) => {
-    Comment.create({ ...req.body, userId: req.session.userId })
+  router.post("/", withAuth, async (req, res) => {
+    console.log(req.body)
+    await Comment.create({ body: req.body.body, userId: req.session.userId })
       .then(newComment => {
-        res.json(newComment);
+        res.redirect("/")
       })
       .catch(err => {
         res.status(500).json(err);

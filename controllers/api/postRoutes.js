@@ -25,7 +25,7 @@ router.put('/:id', withAuth, async (req, res,) => {
             body: req.body,
         },{
             where: {
-            Id: req.params.id,
+              id: req.params.id,
             }
         });
         if (!updatedBody) {
@@ -53,7 +53,7 @@ router.post('/delete/:id', withAuth, async (req, res) => {
       return;
     }
     res.redirect('/dashboard');
-    
+
   } catch (err) {
     res.status(500).json(err);
   }

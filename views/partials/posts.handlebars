@@ -23,12 +23,12 @@
 <p>{{comments}}</p>
 </div>
 <article>
-<form  method="POST" action="/">
+<form  method="POST" action="/api/comment">
     <div class="input-field">
         <label>Comment: </label>
-        <textarea type="text" name="comment" placeholder="Whats your opinion?" cols="30" rows="5"></textarea>
+        <textarea type="text" name="body" placeholder="Whats your opinion?" cols="30" rows="5"></textarea>
      </div>   
-    <input type="hidden" name="comment-id" value="'{{comment.id}}">
+    <input type="hidden" name="comment-id" value="'{{comment.id}}'">
     <button type="submit">Add Comment</button>
 
     </form>

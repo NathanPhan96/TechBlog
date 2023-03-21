@@ -5,12 +5,12 @@ const withAuth = require('../../utils/auth');
 
 // TODO - create a POST route for creating a new comment
 // This should be a protected route, so you'll need to use the withAuth middleware
-router.post('/', withAuth, async (req, res) => {
+router.post('/comment', withAuth, async (req, res) => {
     const body = req.body;
     try{
         const addComment = await Comment.create({
-            ...body,
-            userId: req.user.id,
+            body: req.body.body,
+            userId: req.session.userId,
         });
         res.json(addComment);
     }catch(err){
@@ -19,18 +19,7 @@ router.post('/', withAuth, async (req, res) => {
     });
 
 
-router.get('/', withAuth, async (req, res) => {
-try {
-    const commentData = await Comment.findAll({
-        include : [User],
-    });
-    const postComments = commentData.map((comment) => comment.get({ plain: true }));
-    console.log(postComments)
-    res.render('single-post', { postComments, loggedIn: req.session.loggedIn});
-} catch (err) {
-    res.status(400).json(err);
-    }
-});
+
 
 module.exports = router;
 

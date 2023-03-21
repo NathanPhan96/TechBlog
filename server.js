@@ -34,7 +34,7 @@ app.use(session(sess));
 //create handlebars instance and add custom helper functions
 const hbs = exphbs.create({ 
   helpers,
-  hotreload: true,
+  hotreload: false,
 });
 
 app.engine('handlebars', hbs.engine);

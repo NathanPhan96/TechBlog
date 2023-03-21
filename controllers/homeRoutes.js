@@ -9,10 +9,7 @@ router.get("/", async (req, res) => {
   // TODO - retrieve all posts from the database
   // render the homepage template with the posts retrieved from the database
   // refer to homepage.handlebars write the code to display the posts
-  let username;
-  if (req.session.loggedIn) {
-    username = req.session.username;
-  }
+  
   try{
     const postData = await Post.findAll({
     include: [User],

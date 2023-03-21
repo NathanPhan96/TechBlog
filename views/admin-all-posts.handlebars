@@ -1,7 +1,15 @@
 
 {{!-- TODO - write the template to show all the user's posts on the /dashboard route --}}
-<a href ="/dashboard/create">Create Post</a>
-<h2>My Posts</h2>
+<a href ="/dashboard/create"  style="margin-top: 5px;" class ="create">Create Post</a>
+
+<h2 style="margin-left:50rem;">My Posts</h2>
+<div class="col-md-8">
 {{#each posts }}
+<form name="deletePost" id="deletePost" method="delete">
+    <div class="form-submit">
+        <input type="submit" value="Delete Post" />
+    </div>
+</form>
 {{>posts this }}
 {{/each}}
+</div>

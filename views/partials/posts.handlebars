@@ -14,10 +14,23 @@
 </style> --}}
 
 
-
-<div class="post">
+<div class="col-md-8">
+<h6>POST ID: {{id}}</h6>
  <h2>{{title}}</h2>
  <p>{{body}}</p>
-<p>Posted by :<strong>{{user.username}}</strong></p>
+ <p>Posted by :<strong>{{user.username}}</strong></p>
  <p>Posted at :{{format_date createdAt}}</p>
+ <p>{{comment}}</p>
 </div>
+<form name="comment" id="comment" method="POST" action="/comment">
+    <div class="commentSection">
+        <label for="comment-text">Comment: </label>
+        <br>
+        <textarea name="comment-text" id="comment-text" cols="30" rows="10"></textarea>
+        <br>
+        <button class="comsubmit" type="submit" id="submit">Submit</button>
+    </div>
+    <div>
+
+    </div>
+</form>

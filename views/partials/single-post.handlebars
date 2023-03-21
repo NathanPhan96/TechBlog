@@ -1,10 +1,33 @@
-<div class="col-md-8">
- <h3>{{post.title}}</h3>
+<div class="col-md-8" >
+    <div class="card col-md-6"  style="border-radius:5px; border-style:inset; border-width: 4px;margin-bottom:15; align-content:center; margin-left:20%; background-color:rgba(224, 223, 223, 0.847);">
+  <h5 class="card-header" style="background:rgb(204, 232, 249);">Edit Post</h5>
+  <form class="card-body" data-postid="{{post.id}}" id="edit-post-form" style="border-radius:5px; border-style:inset; border-width: 4px;margin-bottom:15; align-content:center; margin-left:20%;">
+      <div>
+      <label class="form-label">Title:</label>
+      <input class="form-input" id="post-title" type="text" name="post-title" value="{{post.title}}"/>
+    </div>
+
+    <div>
+      <label class="form-label">Content:</label>
+      <textarea class="form-textarea form-input" id="post-body" name="post-body">{{post.body}}</textarea>
+    </div>
+
+    <button class="btn btn-primary" type="submit">EDIT</button>
+    <input type="hidden" id="post-id" name="post-id" value="{{id}}"/>
+
+</div>
+<script src="/js/edit.js"></script>
+
+
+ <div style="border-radius:5px; border-style:inset; border-width: 4px;margin-bottom:15; margin-left:20%; background-color:rgba(224, 223, 223, 0.847);">
+ <p style="font-weight:bolder; font-size:25px; margin-left:35%;">{{post.title}}</p>
  </a>
- <p>{{post.body}}</p>
- <p>Posted by :<strong>{{post.user.username}}</strong></p>
- <div id="comments">
-<p>Comments:</p>
+ <p style="margin-left: 5%">{{post.body}}</p>
+ <p style="margin-left:5%">Posted by :<strong>{{post.user.username}}</strong></p>
+ </div>
+ <div id="comments" style="border-radius:5px; border-style:inset; border-width: 4px;margin-bottom:15;margin-left:20%; background-color:rgba(224, 223, 223, 0.847);">
+
+<p style="font-weight:bolder; font-size:25px; margin-left:35%;">Comments:</p>
 {{#each post.comments as |comment|}}
  {{>comment comment}}
  {{/each }}

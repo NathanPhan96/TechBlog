@@ -1,0 +1,15 @@
+<div class="container row col-lg-12" style="object-fit: fill;">
+  <div class="comments" style="border-radius:5px; border-style:inset; border-width: 4px;margin-bottom:15;margin-left:15%">
+    <div class="card comment-box" style="padding:3px">
+
+      <div class="card-text comment-text">
+       <p>{{body}}</p>
+      </div>
+      <div class="comment-author">
+       <p>Posted By: {{this.user.username}}</p>
+        <p> At: {{format_date createdAt}}</p>
+      </div>
+
+    </div>
+  </div>
+</div>

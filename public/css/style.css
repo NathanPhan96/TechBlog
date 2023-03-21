@@ -21,7 +21,7 @@ justify-content: space-between;
 }
 body {
 background-color: lightgray; 
-
+object-fit: ;
 }
 
 .btn{
@@ -42,8 +42,14 @@ a.create{
     padding : 3px;
     text-decoration: none;
 }
+a{
+    text-align: center;
+}
+a#posttitle{
+    margin-left: 26%;
+}
 a:link{
-    color: green;
+    color: rgb(33, 15, 199);
 }
 a:visited{
     color: purple;
@@ -64,17 +70,36 @@ font-size: larger;
     align-content: space-between;
     flex-direction: column;
     flex-wrap: wrap;
-    border: 1px solid black;
+   
     padding:5px;
     margin:5px;
     border-radius: 10px;
-    margin-left: 15rem;
+    margin-left: 20%;
     background-color: rgb(204, 232, 249);
+}
+#post{
+    background-color: rgba(224, 223, 223, 0.847);
+}
+.comment-box{
+display: flex; 
+align-content: space-around;
+align-items: center;
 }
 
 p{
     text-align: left;
 }
+h3{
+    text-align: center;
+}
 h6{
     text-align: left;
+}
+h4{
+    text-align: left;
+}
+h5{
+    text-align: center;
+    font-size: 25px;
+    
 }

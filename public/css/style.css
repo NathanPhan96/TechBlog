@@ -1,2 +1,20 @@
-
 /* TODO - Write your CSS here */
+#jumbo {
+    font-family: "Brush Script MT";
+    font-weight: 700;
+    background-image : url("https://giphy.com/embed/pOEbLRT4SwD35IELiQ") width="480" height="270" frameBorder="0"
+}
+.jumbotron {
+    background-image : url("https://giphy.com/embed/pOEbLRT4SwD35IELiQ") width="480" height="270" frameBorder="0"
+}
+
+.post {
+    border: 1px solid black;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 10px;
+
+}
+.post h2{
+    text-decoration: wavy;
+}

@@ -1,28 +1,11 @@
-{{!-- <style
-.post {
-    border: 1px solid black;
-    padding: 10px;
-    margin: 10px;
-    border-radius: 10px;
-    
-},
-.post h2{
-    text-decoration: wavy;
-}
->
-</style> --}}
-
-
 <div class="col-md-8">
-<a href="/post/{{id}}">
- <h2>{{title}}</h2>
+ <h2>{{post.title}}</h2>
  </a>
- <p>{{body}}</p>
- <p>Posted by :<strong>{{user.username}}</strong></p>
- <p>Posted at :{{format_date createdAt}}</p>
+ <p>{{post.body}}</p>
+ <p>Posted by :<strong>{{post.user.username}}</strong></p>
  <div id="comments">
 <p>Comments:</p>
-{{#each comments as |comment|}}
+{{#each post.comments as |comment|}}
  {{>comment comment}}
  {{/each }}
  </div>

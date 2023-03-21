@@ -8,8 +8,8 @@ const editFormHandler = async function(event) {
     console.log(postId);
 
     fetch("/api/post/" + postId.value, {
-        
-        method: "put", 
+
+        method: "PUT",
         body: JSON.stringify({
             title: titleEl.value,
             body: bodyEl.value

@@ -39,7 +39,7 @@ router.put('/:id', withAuth, async (req, res,) => {
 
 // TODO - create a DELETE route for deleting a post with a specific id
 // This should be a protected route, so you'll need to use the withAuth middleware
-router.delete('/:id', async (req, res) => {
+router.post('/delete/:id', withAuth, async (req, res) => {
     // delete on tag by its `id` value
     try {
       const deletePost = await Post.destroy({
@@ -52,7 +52,8 @@ router.delete('/:id', async (req, res) => {
       res.status(404).json({ message: "There is no post with this id. Please try again!" });
       return;
     }
-    res.status(200).json(deletePost);
+    res.redirect('/dashboard');
+    
   } catch (err) {
     res.status(500).json(err);
   }

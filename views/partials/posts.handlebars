@@ -20,17 +20,16 @@
  <p>{{body}}</p>
  <p>Posted by :<strong>{{user.username}}</strong></p>
  <p>Posted at :{{format_date createdAt}}</p>
- <p>{{comment}}</p>
+<p>{{comments}}</p>
 </div>
-<form name="comment" id="comment" method="POST" action="/comment">
-    <div class="commentSection">
-        <label for="comment-text">Comment: </label>
-        <br>
-        <textarea name="comment-text" id="comment-text" cols="30" rows="10"></textarea>
-        <br>
-        <button class="comsubmit" type="submit" id="submit">Submit</button>
-    </div>
-    <div>
+<article>
+<form  method="POST" action="/">
+    <div class="input-field">
+        <label>Comment: </label>
+        <textarea type="text" name="comment" placeholder="Whats your opinion?" cols="30" rows="5"></textarea>
+     </div>   
+    <input type="hidden" name="comment-id" value="'{{comment.id}}">
+    <button type="submit">Add Comment</button>
 
-    </div>
-</form>
+    </form>
+</article>

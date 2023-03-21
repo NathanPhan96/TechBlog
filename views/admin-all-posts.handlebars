@@ -5,10 +5,10 @@
 <h2 style="margin-left:50rem;">My Posts</h2>
 <div class="col-md-8">
 {{#each posts }}
-<form name="deletePost" id="deletePost" method="delete">
-    <div class="form-submit">
-        <input type="submit" value="Delete Post" />
-    </div>
+<form method="POST" action="api/post/delete/{{id}}">
+    <button type="submit">DELETE</button>
+</form>
+
 </form>
 {{>posts this }}
 {{/each}}

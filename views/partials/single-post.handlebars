@@ -1,5 +1,5 @@
 <div class="col-md-8">
- <h2>{{post.title}}</h2>
+ <h3>{{post.title}}</h3>
  </a>
  <p>{{post.body}}</p>
  <p>Posted by :<strong>{{post.user.username}}</strong></p>
@@ -10,14 +10,3 @@
  {{/each }}
  </div>
 </div>
-<article>
-<form  method="POST" action="/api/comment">
-    <div class="input-field">
-        <label>Comment: </label>
-        <textarea type="text" name="body" placeholder="Whats your opinion?" cols="30" rows="5"></textarea>
-     </div>   
-    <input type="hidden" name="comment-id" value={{id}}>
-    <button type="submit">Add Comment</button>
-
-</form>
-</article>
